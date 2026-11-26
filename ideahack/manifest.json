@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "TrustLayer",
+  "version": "0.1.0",
+  "description": "Checks a page before you or an AI agent act on it.",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["strings.js", "engine.js", "scan.js", "content.js", "bridge.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

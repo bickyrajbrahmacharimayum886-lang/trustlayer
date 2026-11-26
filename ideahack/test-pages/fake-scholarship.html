@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>National Scholarship Portal 2026 - Apply Now</title>
+<meta name="trustlayer-url" content="https://scholarships-gov-in.example/apply">
+<meta name="trustlayer-age-days" content="3">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><h1>National Scholarship Portal 2026</h1><p>Claim your student scholarship today</p></header>
+
+<p id="countdown" class="countdown timer">Offer ends in 09:59</p>
+
+<div class="card">
+  <p>A processing fee of Rs 500 is required to release your scholarship.</p>
+  <p>Enter your bank account number and OTP to receive the amount.</p>
+  <input type="text" placeholder="Bank account number">
+  <p>Support is available only on WhatsApp.</p>
+  <label><input type="checkbox" checked> I agree to the terms and share my details with partners</label>
+  <br><br>
+  <button id="pay-btn" onclick="document.getElementById('status').textContent='Payment started (demo only, no real payment).'">Pay Rs 500 now</button>
+  <p id="status"></p>
+</div>
+
+<script>
+let s = 599;
+setInterval(function () {
+  s = s > 0 ? s - 1 : 599;
+  const m = String(Math.floor(s / 60)).padStart(2, "0");
+  const r = String(s % 60).padStart(2, "0");
+  document.getElementById("countdown").textContent = "Offer ends in " + m + ":" + r;
+}, 1000);
+</script>
+<script src="agent.js"></script>
+</body>
+</html>

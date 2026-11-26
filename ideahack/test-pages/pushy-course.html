@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SkillBoost Academy - Full Stack Course</title>
+<meta name="trustlayer-url" content="https://skillboost-academy.example/checkout">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><h1>SkillBoost Academy</h1><p>Full Stack Development Course</p></header>
+
+<p id="countdown" class="countdown timer">Offer ends in 09:59</p>
+
+<div class="card">
+  <p><b>Course price:</b> Rs 4,999</p>
+  <label><input type="checkbox" checked> Add course insurance (Rs 499)</label>
+  <p class="fine">Convenience fee Rs 299 added at checkout.</p>
+  <button id="pay-btn" onclick="document.getElementById('status').textContent='Order placed (demo only).'">Buy now for Rs 4,999</button>
+  <p id="status"></p>
+</div>
+
+<script>
+let s = 599;
+setInterval(function () {
+  s = s > 0 ? s - 1 : 599;
+  const m = String(Math.floor(s / 60)).padStart(2, "0");
+  const r = String(s % 60).padStart(2, "0");
+  document.getElementById("countdown").textContent = "Offer ends in " + m + ":" + r;
+}, 1000);
+</script>
+<script src="agent.js"></script>
+</body>
+</html>
